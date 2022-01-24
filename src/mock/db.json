@@ -1,4 +1,93 @@
 {
-  "products": [],
-  "orders": []
+  "products": [
+    {
+      "id": 2,
+      "name": "Coca-Cola lata",
+      "calories": 90.45,
+      "price": 8.97,
+      "session": "Bebidas",
+      "createdAt": "Sun, 23 Jan 2022 16:08:23 GMT"
+    }
+  ],
+  "orders": [
+    {
+      "id": 2,
+      "table": "2",
+      "total": 17.94,
+      "createdAt": "Sun, 23 Jan 2022 16:23:39 GMT",
+      "paid": true,
+      "productsList": [
+        {
+          "id": 1,
+          "name": "Coca-Cola lata",
+          "calories": 90.45,
+          "price": 8.97,
+          "session": "Bebidas"
+        },
+        {
+          "id": 2,
+          "name": "Coca-Cola lata",
+          "calories": 90.45,
+          "price": 8.97,
+          "session": "Bebidas",
+          "createdAt": "Sun, 23 Jan 2022 16:08:23 GMT"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "total": 8.97,
+      "createdAt": "Sun, 23 Jan 2022 16:24:04 GMT",
+      "paid": true,
+      "productsList": [
+        {
+          "id": 1,
+          "name": "Coca-Cola lata",
+          "calories": 90.45,
+          "price": 8.97,
+          "session": "Bebidas"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "table": "2",
+      "total": 0,
+      "createdAt": "Sun, 23 Jan 2022 16:24:18 GMT",
+      "paid": false,
+      "productsList": 0
+    },
+    {
+      "id": 5,
+      "table": "1",
+      "total": 8.97,
+      "createdAt": "Sun, 23 Jan 2022 16:24:28 GMT",
+      "paid": true,
+      "productsList": [
+        {
+          "id": 1,
+          "name": "Coca-Cola lata",
+          "calories": 90.45,
+          "price": 8.97,
+          "session": "Bebidas"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "table": "8",
+      "total": 8.97,
+      "createdAt": "Mon, 24 Jan 2022 03:29:48 GMT",
+      "paid": false,
+      "productsList": [
+        {
+          "id": 1,
+          "name": "Coca-Cola lata",
+          "calories": 90.45,
+          "price": 8.97,
+          "session": "Bebidas"
+        }
+      ]
+    }
+  ]
 }
