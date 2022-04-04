@@ -1,12 +1,7 @@
-# Extra - Criando api para um restaurante
-Vamos criar uma api para auxiliar na organização dos pedidos em um determinado restaurante.
 
-## Objetivo
-O intuito desta atividade e aplicar todos os conhecimentos acumulados nessa sprint de forma mais independente.
-
-### Aviso!
-Todos os testes para essa atividade já foram implementados, clone esse repositório para começar o desenvolvimento do projeto.
-
+# API restaurante
+Criação de uma api para auxiliar na organização dos pedidos em um determinado restaurante. Primeiro projeto back-end - desenvolvido em **Node.js** e Express.
+- base_URL: [https://api-restaurante-extra.herokuapp.com/products](https://api-restaurante-extra.herokuapp.com)
 ## Rotas
 ### POST /product
 Os dados deverão ser salvos em um arquivo JSON.
@@ -30,13 +25,8 @@ Os dados deverão ser salvos em um arquivo JSON.
     "session": "Bebidas"
 }
 ```
-### Regras:
-- calories e price: Deve conter duas casas decimais caso sejam diferente de 0. Ambos devem ser do tipo number. Caso contrário, retorne o status code 400 e uma mensagem de erro personalizada.
-- calories: Deverá ter um valor padrão 0, portanto não é obrigatório enviar.
-- session: Não é um campo obrigatório, caso não seja enviado preencher com null.
-<hr>
 
-### PATCH /product/:id
+### PATCH /products/:id
 Deve atualizar os campos do produto com determinado id no JSON e retornar todos os campos com as atualizações.
 
 #### Requisição:
@@ -55,11 +45,8 @@ Deve atualizar os campos do produto com determinado id no JSON e retornar todos 
     "session": "Bebidas"
 }
 ```
-#### Regras:
-- Deve obedecer as mesmas regras da rota POST
-<hr>
 
-### GET /product/:id
+### GET /products/:id
 Deve retornar o produto com determinado id.
 
 #### Requisição:
@@ -75,11 +62,8 @@ Não possui corpo de requisição
     "session": "Bebidas"
 }
 ```
-#### Regras:
-Caso o produto não exista, deve ser retornado o status 404 e um objeto vazio {}.
-<hr>
 
-#### DELETE/product/:id
+#### DELETE/products/:id
 Deve deletar o produto com determinado id.
 
 #### Requisição:
@@ -89,11 +73,8 @@ Não possui corpo de requisição
 ```json
 {}
 ```
-#### Regras:
-- Caso o produto não exista deve ser retornado o status 404 e um objeto vazio {}.
-<hr>
 
-### GET /product
+### GET /products
 Deve retornar as informações da paginação e um array dos produtos em determinada página.
 
 #### Requisição:
@@ -139,12 +120,8 @@ Não possui corpo de requisição
     }
 ]
 ```
-#### Regras:
-- page: Caso não seja passado nenhum valor deve ser atribuído 1.
-- perPage: Caso não seja passado nenhum valor deve ser atribuído 15.
-<hr>
 
-### POST /order
+### POST /orders
 Deve criar um pedido com o número da mesa e o id de cada um dos produtos.
 
 #### Requisição:
@@ -187,15 +164,8 @@ Deve criar um pedido com o número da mesa e o id de cada um dos produtos.
     ]
 }
 ```
-#### Regras:
-- total: Deve retornar o total da soma de todos os produtos inseridos no pedido dinamicamente.
-- createdAt: Retorna a data do instante que o pedido foi criado.
-- paid: Sempre será iniciado como false.
-- productsList: Aceita apenas um array dos id's dos produtos porém no retorno deve ser apresentado o objeto inteiro de cada produto.
-- productsList: Caso algum produto não exista, retorne uma mensagem de erro personalizada e o status 404.
-<hr>
 
-### PATCH /order/:id
+### PATCH /orders/:id
 Deve atualizar um pedido através do seu id.
 
 #### Requisição:
@@ -216,13 +186,8 @@ Deve atualizar um pedido através do seu id.
     "productsList": [1,3,5]
 }
 ```
-#### Regras:
-- total: Não pode ser alterado.
-- createdAt: Não pode ser alterado.
-- productsList: Não pode ser atualizado e deve ser retornado apenas os id's dos produtos.
-<hr>
 
-### GET /order/:id
+### GET /orders/:id
 Deve um pedido através do id.
 
 #### Requisição:
@@ -261,11 +226,7 @@ Não possui corpo de requisição
     ]
 }
 ```
-#### Regras:
-- Caso o pedido não exista deve ser retornado o status 404 e um objeto vazio {}.
-<hr>
-
-### DELETE /order/:id
+### DELETE /orders/:id
 Deve deletar um pedido através do id.
 
 #### Requisição:
@@ -275,11 +236,8 @@ Não possui corpo de requisição
 ```json
 {}
 ```
-#### Regras:
-- Caso o pedido não exista deve ser retornado o status 404 e um objeto vazio {}.
-<hr>
 
-### PATCH /order/:id/pay
+### PATCH /orders/:id/pay
 Deve atualizar o status paid do pedido para true.
 
 #### Requisição:
@@ -288,11 +246,7 @@ Não possui corpo de requisição
 #### Resposta: Status 204
 Não possui corpo de requisição
 
-#### Regras:
-- Caso o pedido não exista deve ser retornado o status 404 e um objeto vazio {}.
-<hr>
-
-### GET /order
+### GET /orders
 Deve retornar todos os pedidos com o status paid === false.
 
 #### Requisição:
@@ -343,5 +297,3 @@ Não possui corpo de requisição
     }
 ]
 ```
-#### Regras:
-- Caso não exista pedidos em aberto, retornar as informações da paginação e data: [].
